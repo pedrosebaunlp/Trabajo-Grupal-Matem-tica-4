@@ -11,5 +11,6 @@ energy_efficiency = fetch_ucirepo(id=242)
 X = energy_efficiency.data.features
 y = energy_efficiency.data.targets
 
-
+# Definimos como Var. Respuesta a Y1
+print(simple)
 
