@@ -38,7 +38,7 @@ def ICM_Y(x, y, alpha):
     
     aux = t_crit * np.sqrt(simple.varianza_estim(x, y, x.size)*in_sqrt)
     
-    print(f"ICM(Y) = ({b0+b1*x_estrella-aux} ; {b0+b1*x_estrella+aux})")
+    print(f"ICM(Y) = ({b0+b1*x_estrella-aux:.4f} ; {b0+b1*x_estrella+aux:.4f})")
 
 
 def IP_Y(x, y, alpha):    
@@ -54,4 +54,4 @@ def IP_Y(x, y, alpha):
     
     aux = t_crit * np.sqrt(simple.varianza_estim(x, y, x.size)*in_sqrt)
     
-    print(f"IP(Y) = ({y_estrella-aux} ; {y_estrella+aux})")
+    print(f"IP(Y) = (Y*-{aux:.4f} ; Y*+{aux:.4f})")

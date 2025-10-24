@@ -2,6 +2,7 @@
 import calcs.simple            as simple
 import calcs.intervalos        as intervalos
 import matplotlib.pyplot       as plt
+import numpy                   as np
 import pandas as pd
 from ucimlrepo import fetch_ucirepo
 
@@ -24,6 +25,14 @@ for i in range(1,9):
     intervalos.IC_B0(Xi_data, Y, 0.05)
     intervalos.ICM_Y(Xi_data, Y, 0.05)
     intervalos.IP_Y(Xi_data, Y, 0.05)
+    # Graficar datos
+    plt.figure(figsize=(10, 6))
+    plt.scatter(Xi_data, Y, color='blue')
+    plt.plot(Xi_data, simple.beta_0_estim(Xi_data, Y, Xi_data.size) + simple.beta_1_estim(Xi_data, Y, Xi_data.size) * Xi_data, color='red')
+    plt.xlabel(Xi)
+    plt.ylabel('Heating Load')
+    plt.title('Regresión Lineal Simple')
+    plt.savefig(f"./imgs/{Xi}.png")
 #print(X)
 # print(X.sum())
 # print((X**2).sum())
