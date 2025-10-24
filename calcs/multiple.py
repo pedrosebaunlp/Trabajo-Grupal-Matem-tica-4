@@ -1,5 +1,4 @@
 import numpy  as np
-import pandas as pd
 
 def x_matriz(x):
     n = x["X1"].size # Todas tienen el mismo largo
@@ -44,6 +43,13 @@ def r(x,y):
     return np.sqrt(R2a(x,y))
 def sigma2(x,y):
     return ssr(x,y)/(x.size-4)
+
+def y_est_met_min_cuad(x,y):
+    beta = form_reg_mult(x,y)
+    beta_est = f'{beta[0]}'
+    for i in range(1,len(beta)):
+        beta_est=beta_est+f'+{beta[i]}*x{i}'
+    return beta_est
 
 
 
