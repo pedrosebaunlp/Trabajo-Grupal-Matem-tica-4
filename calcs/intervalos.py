@@ -30,7 +30,7 @@ def ICM_Y(x, y, alpha):
     
     x_barra = x.sum()/x.size
     
-    x_estrella = x_barra # ToDo: DECIDIR...
+    x_estrella = x_barra
     
     t_crit = t.ppf(1 - (alpha/2), x.size - 2) # t_(a/2;n-2)
     
@@ -42,11 +42,11 @@ def ICM_Y(x, y, alpha):
 
 
 def IP_Y(x, y, alpha):    
-    y_estrella = 0 # ToDo: No sé aun que es
+    y_estrella = 0
     
     x_barra = x.sum()/x.size
     
-    x_estrella = x_barra # ToDo: DECIDIR...
+    x_estrella = x_barra
     
     t_crit = t.ppf(1 - (alpha/2), x.size - 2) # t_(a/2;n-2)
     

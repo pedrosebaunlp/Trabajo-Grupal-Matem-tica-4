@@ -17,7 +17,6 @@ def x_matriz(x):
 def form_reg_mult(x,y):
     X_mat = x_matriz(x)
     XT = X_mat.T
-    # return np.linalg.inv(XT @ X_mat) @ XT @ y
     return np.linalg.solve(XT @ X_mat, XT @ y) # calcula sin pasar la inversa, da mejores valores
     """
     En lugar de hacer B = (X^T * X)^-1 * X^T * Y
