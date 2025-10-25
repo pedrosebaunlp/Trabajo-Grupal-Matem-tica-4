@@ -1,6 +1,7 @@
 #import calcs.multiple          as multiple
 import calcs.simple            as simple
 import calcs.intervalos        as intervalos
+import calcs.multiple as multiple
 import matplotlib.pyplot       as plt
 import pandas as pd
 from ucimlrepo import fetch_ucirepo
@@ -11,9 +12,21 @@ energy_efficiency = fetch_ucirepo(id=242)
 # data (as pandas dataframes)
 # X = energy_efficiency.data.features["X1"]
 Y = energy_efficiency.data.targets["Y1"]
+X = energy_efficiency.data.features["X1"]
 #n = X.size
 #simple.calculate(X,Y,X.size)
-print("========== (Y1) ==========")
+betas = multiple.form_reg_mult(energy_efficiency.data.features, Y)
+
+acc = betas[0]
+
+for i in range(1,9):
+    acc += betas[i] * energy_efficiency.data.features[f"X{i}"][0]
+
+print(betas)
+print(acc)
+print(Y[0])
+print(simple.beta_1_estim(X, Y, X.size) * X[0] + simple.beta_0_estim(X, Y, X.size))
+""" print("========== (Y1) ==========")
 print(Y, "\n\n")
 for i in range(1,9):
     Xi = f"X{i}"
@@ -23,7 +36,7 @@ for i in range(1,9):
     intervalos.IC_B1(Xi_data, Y, 0.05)
     intervalos.IC_B0(Xi_data, Y, 0.05)
     intervalos.ICM_Y(Xi_data, Y, 0.05)
-    intervalos.IP_Y(Xi_data, Y, 0.05)
+    intervalos.IP_Y(Xi_data, Y, 0.05) """
 #print(X)
 # print(X.sum())
 # print((X**2).sum())
