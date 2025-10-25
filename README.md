@@ -5,12 +5,12 @@
 ## VENV
 Crear venv
 ```bash
-python3 -m venv ./venv
+python3 -m venv ./.venv
 ```
 
 Usar venv en linux, desconozco en windows
 ```bash
-source ./venv/bin/activate
+source ./.venv/bin/activate
 ```
 
 Ahora se puede tirar comandos de python
