@@ -18,3 +18,5 @@ Ahora se puede tirar comandos de python
 ```bash
 pip install -r requirements.txt
 ```
+
+Dataset disponible [acá](https://archive.ics.uci.edu/dataset/242/energy+efficiency)
